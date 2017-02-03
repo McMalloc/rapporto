@@ -14,6 +14,14 @@ public class Person {
     public boolean isCategory(Rapporto.CATEGORY askedCat) {
         return category == askedCat;
     }
+    public boolean isInTime(int year) {
+        for (int i = 0; i<yearsActive.length; i++) {
+            if (year == yearsActive[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public String getName() {
         return name;

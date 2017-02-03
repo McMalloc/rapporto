@@ -1,3 +1,6 @@
+import processing.core.PApplet;
+import processing.core.PGraphics;
+
 public class Connection {
     private int aID;
     private int bID;
@@ -6,12 +9,12 @@ public class Connection {
     private int id;
     private int[] yearsActive;
 
-    public Connection(int _id, int a, int b, Rapporto.CATEGORY _category, int[] _yearsActive, String _content) {
-        content = _content;
-        id = _id;
+    public Connection(int id, int a, int b, Rapporto.CATEGORY _category, int[] yearsActive, String content) {
+        this.content = content;
+        this.id = id;
         aID = a;
         bID = b;
-        yearsActive = _yearsActive;
+        this.yearsActive = yearsActive;
         category = _category;
     }
 
@@ -21,7 +24,7 @@ public class Connection {
             matchingYear = Rapporto.currentTime == yearsActive[i];
             if (matchingYear) break;
         }
-        return ((idX == aID && idY == bID) || (idY == aID && idX == bID)) && matchingYear;
+        return ((idX == aID && idY == bID)) && matchingYear;
     }
 
     public String getContent() {

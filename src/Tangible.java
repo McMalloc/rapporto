@@ -33,7 +33,10 @@ public class Tangible {
 
     public int getSelectedPerson() {
 //        return 0;
-        return (int) relevantPersons.get(getSelectedArc()-1);
+        int selectedArc = getSelectedArc();
+        if (relevantPersons.size() == 0) return -1;
+        if (selectedArc < 1 || selectedArc > relevantPersons.size()) return -1;
+        return (int) relevantPersons.get(selectedArc-1);
     }
 
     public int getSelectedArc() {
@@ -65,7 +68,6 @@ public class Tangible {
         float arcLength = Rapporto.TWO_PI / getNumberOfArcs();
 
         Rapporto.canvas.beginDraw();
-        Rapporto.canvas.stroke(255);
         Rapporto.canvas.stroke(0);
 
         for (int i = 0; i < relevantPersons.size(); i++) {
@@ -84,13 +86,14 @@ public class Tangible {
 
         Rapporto.canvas.fill(0,0,0);
         Rapporto.canvas.pushMatrix();
-        Rapporto.canvas.translate(sX-30,sY);
+        Rapporto.canvas.translate(sX,sY);
         Rapporto.canvas.rotate(angle);
-        Rapporto.canvas.line(0, 0, -30, 40);
+        Rapporto.canvas.line(0, 0, 30, 0);
         Rapporto.canvas.popMatrix();
-        Rapporto.canvas.ellipse(sX-30, sY, 20, 20);
+        Rapporto.canvas.ellipse(sX, sY, 20, 20);
         Rapporto.canvas.fill(255, 40, 255);
         Rapporto.canvas.text(cat+": "+fiducialID, sX, sY-20);
+
         Rapporto.canvas.endDraw();
 
 
