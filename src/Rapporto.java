@@ -26,10 +26,12 @@ public class Rapporto extends PApplet {
     private float object_size = 60;
     private float table_size = 760;
     private float scale_factor = 1;
-    public TangibleClock theTime = new TangibleClock(this, TIMEID);
+    public TangibleClock theTime = new TangibleClock(TIMEID);
     public static int currentTime = 55;
 
-    public static PGraphics canvas;
+    public static int OBJECTSIZE = 300;
+
+    public PGraphics canvas;
 
     public static ArrayList getRelevantPersons(CATEGORY askedCat) {
         //TODO move to tuio update
@@ -50,7 +52,6 @@ public class Rapporto extends PApplet {
 
     public void setup() {
         tuioClient  = new TuioProcessing(this);
-
         canvas =  createGraphics(WIDTH, HEIGHT);
 
         frameRate(30);
@@ -59,7 +60,7 @@ public class Rapporto extends PApplet {
         for (TableRow row : tangiblesTSV.rows()) {
             int id = row.getInt("id");
             CATEGORY cat = CATEGORY.valueOf(row.getString("cat"));
-            tangibles.put(id, new Tangible(this, id, cat));
+            tangibles.put(id, new Tangible(id, cat));
         }
 
         Table personsTSV;
@@ -95,7 +96,7 @@ public class Rapporto extends PApplet {
         ellipseMode(CENTER);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         PApplet.main(new String[]{"Rapporto"});
     }
 
@@ -103,22 +104,27 @@ public class Rapporto extends PApplet {
         ArrayList<TuioObject> tuioObjectList = tuioClient.getTuioObjectList();
         int visibleTangibles = tuioObjectList.size();
 
-        Rapporto.canvas.beginDraw();
-        Rapporto.canvas.background(255);
-        Rapporto.canvas.endDraw();
+        canvas.beginDraw();
+        canvas.background(128);
+        canvas.endDraw();
 
         for (int i = 0; i < visibleTangibles; i++) {
             TuioObject tobj = tuioObjectList.get(i);
             if (tobj.getSymbolID() == TIMEID) {
-                theTime.draw(tobj.getScreenX(width), tobj.getScreenY(height), tobj.getAngle());
+                theTime.draw(this, tobj.getScreenX(width), tobj.getScreenY(height), tobj.getAngle());
             } else {
-                tangibles
-                        .get(tobj.getSymbolID())
-                        .draw(
-                                tobj.getScreenX(width),
-                                tobj.getScreenY(height),
-                                tobj.getAngle()
-                        );
+                try {
+                    tangibles
+                            .get(tobj.getSymbolID())
+                            .draw(
+                                    this,
+                                    tobj.getScreenX(width),
+                                    tobj.getScreenY(height),
+                                    tobj.getAngle()
+                            );
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
             }
         }
 
@@ -137,15 +143,16 @@ public class Rapporto extends PApplet {
                     for (int k = 0; k < connections.size(); k++) {
                         Connection current = connections.get(k);
                         if (current.hasConnection(at.getSelectedPerson(), bt.getSelectedPerson())) {
-                            canvas.stroke(0,0,255);
-                            int x1 = a.getScreenX(WIDTH);
-                            int y1 = a.getScreenY(HEIGHT);
-                            int x2 = b.getScreenX(WIDTH);
-                            int y2 = b.getScreenY(HEIGHT);
                             float t1 = a.getAngle();
                             float t2 = b.getAngle();
+                            int x1 = a.getScreenX(WIDTH)+(int)((cos(t1)*OBJECTSIZE/2));
+                            int y1 = a.getScreenY(HEIGHT)+(int)((sin(t1)*OBJECTSIZE/2));
+                            int x2 = b.getScreenX(WIDTH)+(int)((cos(t1)*OBJECTSIZE/2));
+                            int y2 = b.getScreenY(HEIGHT)+(int)((sin(t1)*OBJECTSIZE/2));
                             float curvatureDitherA = CURVATURE+100*cos((float)(millis()/1000.0));
                             float curvatureDitherB = CURVATURE+100*sin((float)(millis()/1000.0));
+
+                            canvas.stroke(200,0,255);
                             canvas.beginShape();
                             // Control point for beginning
                             canvas.curveVertex(
@@ -169,7 +176,7 @@ public class Rapporto extends PApplet {
                 }
             }
         }
-//        tint(255, 190);
+//        tint(255, 170);
         image(canvas, 0, 0);
     }
 
