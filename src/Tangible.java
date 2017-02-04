@@ -64,10 +64,10 @@ public class Tangible {
         float arcLength = Rapporto.TWO_PI / getNumberOfArcs();
         int objSize = Rapporto.OBJECTSIZE;
 
-        PGraphics mask, annulus;
+//        PGraphics mask, annulus;
 
 //        mask = ctx.createGraphics(objSize, objSize, Rapporto.P2D);
-        annulus = ctx.createGraphics(objSize, objSize);
+//        annulus = ctx.createGraphics(objSize, objSize, Rapporto.P2D);
 
 //        mask.beginDraw();
 //        mask.noStroke();
@@ -77,40 +77,40 @@ public class Tangible {
 //        mask.ellipse(objSize/2, objSize/2, 150, 150);
 //        mask.endDraw();
 
-        annulus.beginDraw();
-        annulus.noStroke();
-        annulus.textAlign(Rapporto.CENTER);
-        annulus.textSize(18);
+        ctx.canvas.beginDraw();
+
+        ctx.canvas.noStroke();
+        ctx.canvas.textAlign(Rapporto.CENTER);
+        ctx.canvas.textSize(18);
         for (int i = 0; i < relevantPersons.size(); i++) {
             Person current = Rapporto.persons.get(relevantPersons.get(i));
-            annulus.pushMatrix();
-            annulus.translate(objSize/2, objSize/2);
-            annulus.rotate(i*arcLength);
+            ctx.canvas.pushMatrix();
+            ctx.canvas.translate(sX, sY);
+            ctx.canvas.rotate(i*arcLength);
 //            ctx.canvas.rotate(arcLength);
             if (i+1 == selectedArc) {
-                annulus.fill(60,200,70);
+                ctx.canvas.fill(60,200,70);
             } else {
-                annulus.fill(120,30,70);
+                ctx.canvas.fill(120,30,70);
 
             }
-            annulus.arc(0, 0, objSize, objSize, 0, arcLength, Rapporto.PIE);
-            annulus.rotate((float)(arcLength*-0.5));
-            annulus.fill(0);
-            annulus.text(current.getID()+": "+current.getName().replace(" ", "\n"), 0, 100);
-            annulus.popMatrix();
+            ctx.canvas.arc(0, 0, objSize, objSize, 0, arcLength, Rapporto.PIE);
+            ctx.canvas.rotate((float)(arcLength*-0.5));
+            ctx.canvas.fill(255);
+            ctx.canvas.text(current.getID()+": "+current.getName().replace(" ", "\n"), 0, 0+100);
+            ctx.canvas.popMatrix();
         }
-        annulus.endDraw();
+//        ctx.canvas.endDraw();
 //        annulus.mask(mask);
 
         // draw angle indicator
-        ctx.canvas.beginDraw();
+//        ctx.canvas.beginDraw();
         ctx.canvas.pushMatrix();
         ctx.canvas.translate(sX,sY);
         ctx.canvas.text("arc " + selectedArc + " points to " + getSelectedPerson(), 0, objSize/2+(20));
 //        ctx.canvas.tint(255,170);
-        ctx.canvas.image(annulus, -objSize/2, -objSize/2);
         ctx.canvas.rotate(angle);
-        ctx.canvas.line(0, 0, 30, 0);
+        ctx.canvas.line(0, 0, 300, 0);
         ctx.canvas.popMatrix();
         ctx.canvas.endDraw();
     }

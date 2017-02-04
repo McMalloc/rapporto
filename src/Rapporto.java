@@ -31,7 +31,7 @@ public class Rapporto extends PApplet {
 
     public static int OBJECTSIZE = 300;
 
-    public PGraphics canvas;
+    public PGraphics canvas, annulus;
 
     public static ArrayList getRelevantPersons(CATEGORY askedCat) {
         //TODO move to tuio update
@@ -54,7 +54,7 @@ public class Rapporto extends PApplet {
         tuioClient  = new TuioProcessing(this);
         canvas =  createGraphics(WIDTH, HEIGHT, P2D);
 
-        frameRate(30);
+        frameRate(500);
         Table tangiblesTSV;
         tangiblesTSV = loadTable("data\\tangibles.tsv", "header, tsv");
         for (TableRow row : tangiblesTSV.rows()) {
@@ -178,6 +178,8 @@ public class Rapporto extends PApplet {
         }
 //        tint(255, 170);
         image(canvas, 0, 0);
+        fill(0, 255, 0);
+        text(frameRate, WIDTH-50, 10);
     }
 
     // called when a cursor is added to the scene
