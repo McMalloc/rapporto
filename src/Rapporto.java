@@ -52,7 +52,7 @@ public class Rapporto extends PApplet {
 
     public void setup() {
         tuioClient  = new TuioProcessing(this);
-        canvas =  createGraphics(WIDTH, HEIGHT);
+        canvas =  createGraphics(WIDTH, HEIGHT, P2D);
 
         frameRate(30);
         Table tangiblesTSV;
@@ -105,7 +105,7 @@ public class Rapporto extends PApplet {
         int visibleTangibles = tuioObjectList.size();
 
         canvas.beginDraw();
-        canvas.background(128);
+        canvas.background(20);
         canvas.endDraw();
 
         for (int i = 0; i < visibleTangibles; i++) {

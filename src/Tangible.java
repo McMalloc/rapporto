@@ -66,16 +66,16 @@ public class Tangible {
 
         PGraphics mask, annulus;
 
-        mask = ctx.createGraphics(objSize, objSize, Rapporto.P2D);
+//        mask = ctx.createGraphics(objSize, objSize, Rapporto.P2D);
         annulus = ctx.createGraphics(objSize, objSize);
 
-        mask.beginDraw();
-        mask.noStroke();
-        mask.fill(0, 0);
-        mask.rect(0, 0, objSize, objSize);
-        mask.fill(255, 0);
-        mask.ellipse(objSize/2, objSize/2, 150, 150);
-        mask.endDraw();
+//        mask.beginDraw();
+//        mask.noStroke();
+//        mask.fill(0, 0);
+//        mask.rect(0, 0, objSize, objSize);
+//        mask.fill(255, 0);
+//        mask.ellipse(objSize/2, objSize/2, 150, 150);
+//        mask.endDraw();
 
         annulus.beginDraw();
         annulus.noStroke();
