@@ -64,19 +64,6 @@ public class Tangible {
         float arcLength = Rapporto.TWO_PI / getNumberOfArcs();
         int objSize = Rapporto.OBJECTSIZE;
 
-//        PGraphics mask, annulus;
-
-//        mask = ctx.createGraphics(objSize, objSize, Rapporto.P2D);
-//        annulus = ctx.createGraphics(objSize, objSize, Rapporto.P2D);
-
-//        mask.beginDraw();
-//        mask.noStroke();
-//        mask.fill(0, 0);
-//        mask.rect(0, 0, objSize, objSize);
-//        mask.fill(255, 0);
-//        mask.ellipse(objSize/2, objSize/2, 150, 150);
-//        mask.endDraw();
-
         ctx.canvas.beginDraw();
 
         ctx.canvas.noStroke();
@@ -90,21 +77,25 @@ public class Tangible {
 //            ctx.canvas.rotate(arcLength);
             if (i+1 == selectedArc) {
                 ctx.canvas.fill(60,200,70);
+                for (int k = 0; k < Rapporto.connections.size(); k++) {
+                    Connection currentC = Rapporto.connections.get(k);
+                    if (currentC.hasConnection(0, current.getID())) {
+                        ctx.canvas.text(currentC.getContent(), 0, 200, 200, 400);
+                    }
+                }
             } else {
                 ctx.canvas.fill(120,30,70);
-
             }
             ctx.canvas.arc(0, 0, objSize, objSize, 0, arcLength, Rapporto.PIE);
             ctx.canvas.rotate((float)(arcLength*-0.5));
             ctx.canvas.fill(255);
             ctx.canvas.text(current.getID()+": "+current.getName().replace(" ", "\n"), 0, 0+100);
+            if(current.hasImage()) {
+                ctx.canvas.image(current.getPortrait(), -100, -100, 150, 150);
+            }
             ctx.canvas.popMatrix();
         }
-//        ctx.canvas.endDraw();
-//        annulus.mask(mask);
 
-        // draw angle indicator
-//        ctx.canvas.beginDraw();
         ctx.canvas.pushMatrix();
         ctx.canvas.translate(sX,sY);
         ctx.canvas.text("arc " + selectedArc + " points to " + getSelectedPerson(), 0, objSize/2+(20));

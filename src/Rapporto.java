@@ -9,13 +9,13 @@ import processing.data.TableRow;
 public class Rapporto extends PApplet {
 
     public enum CATEGORY {
-        FRIEND, BENEFACTOR, LOVER, RIVAL, MAIN
+        FRIEND, BENEFACTOR, LOVER, RIVAL, MAIN, COLLEAGUE
     }
 
     public static final int TIMEID = 4;
     public static final int CURVATURE = 1000;
-    private static final int WIDTH = 1400;
-    private static final int HEIGHT = 900;
+    static final int WIDTH = 1400;
+    static final int HEIGHT = 900;
     private TuioProcessing tuioClient;
     private boolean callback = true;
     public static Map<Number, Person> persons = new HashMap<>();
@@ -54,7 +54,7 @@ public class Rapporto extends PApplet {
         tuioClient  = new TuioProcessing(this);
         canvas =  createGraphics(WIDTH, HEIGHT, P2D);
 
-        frameRate(500);
+        frameRate(60);
         Table tangiblesTSV;
         tangiblesTSV = loadTable("data\\tangibles.tsv", "header, tsv");
         for (TableRow row : tangiblesTSV.rows()) {
@@ -70,7 +70,12 @@ public class Rapporto extends PApplet {
             CATEGORY cat = CATEGORY.valueOf(row.getString("cat"));
             int[] yearsActive = stringToIntArr(row.getString("years"));
             String name = row.getString("name");
-            persons.put(id, new Person(name, cat, id, yearsActive));
+            persons.put(id, new Person(
+                    name,
+                    cat,
+                    id,
+                    yearsActive,
+                    loadImage("data\\person_"+ id +".jpg")));
         }
 
         Table connectionsTSV;
@@ -143,33 +148,7 @@ public class Rapporto extends PApplet {
                     for (int k = 0; k < connections.size(); k++) {
                         Connection current = connections.get(k);
                         if (current.hasConnection(at.getSelectedPerson(), bt.getSelectedPerson())) {
-                            float t1 = a.getAngle();
-                            float t2 = b.getAngle();
-                            int x1 = a.getScreenX(WIDTH)+(int)((cos(t1)*OBJECTSIZE/2));
-                            int y1 = a.getScreenY(HEIGHT)+(int)((sin(t1)*OBJECTSIZE/2));
-                            int x2 = b.getScreenX(WIDTH)+(int)((cos(t1)*OBJECTSIZE/2));
-                            int y2 = b.getScreenY(HEIGHT)+(int)((sin(t1)*OBJECTSIZE/2));
-                            float curvatureDitherA = CURVATURE+100*cos((float)(millis()/1000.0));
-                            float curvatureDitherB = CURVATURE+100*sin((float)(millis()/1000.0));
-
-                            canvas.stroke(200,0,255);
-                            canvas.beginShape();
-                            // Control point for beginning
-                            canvas.curveVertex(
-                                    x1-curvatureDitherA*cos(t1),
-                                    y1-curvatureDitherB*sin(t1)
-                            );
-                            // actual beginning of curve
-                            canvas.curveVertex(x1, y1);
-                            // control point for ending
-                            canvas.curveVertex(x2, y2);
-                            // actual ending
-                            canvas.curveVertex(
-                                    x2-curvatureDitherA*cos(t2),
-                                    y2-curvatureDitherB*sin(t2)
-                            );
-
-                            canvas.endShape();
+                            current.draw(this, a, b);
                         }
                     }
                     canvas.endDraw();
@@ -178,8 +157,9 @@ public class Rapporto extends PApplet {
         }
 //        tint(255, 170);
         image(canvas, 0, 0);
-        fill(0, 255, 0);
-        text(frameRate, WIDTH-50, 10);
+
+        fill(0,255,0);
+        text((int)frameRate, WIDTH-20, 10);
     }
 
     // called when a cursor is added to the scene

@@ -1,4 +1,42 @@
 id	idA	idB	years	cat	content
-0	0	5	63	LOVER	Knutschi
-1	1	4	55,56,57	BENEFACTOR	Sch�n gearbeitet
-2	9	3	55,57,58	BENEFACTOR	Sch�n gearbeitet
+0	1	4	55,56,57,58	RIVAL	waren persönlich nicht gut aufeinander zu sprechen und Winckelmann musste sich auf Distanz halten
+1	10	5	60,61	BENEFACTOR	wohnte jetzt auch in der Villa Albani
+2	10	5	58,59	BENEFACTOR	betreute mit Winckelmann zusammen die die Ausstellung in der Villa Albani
+3	10	11	57	RIVAL	Mengs sollte Hagedorn eine Rezension schreiben, war aber beleidigt, dass er nicht stark genug präsent war
+4	10	18	55,56,57,58,59,60,61,62,63	LOVER	verheiratet
+5	17	10	58	BENEFACTOR	Schüler von Mengs
+6	12	24	0	BENEFACTOR	arbeitete in Fabronis Bibliothek, eine politisch schwierige Stellung
+7	12	3	0	BENEFACTOR	sollte Kardinal werden, nachdem er zum Secretarius wurde, aber seine Anstellung bei Fabroni stellte sich ihm in den Weg
+8	2	6	63	RIVAL	kämpften darum, das Winckelmann für sie arbeitete
+9	24	8	0	RIVAL	„Ein Verfolger!“
+10	5	7	0	FRIEND	langährige Freunde, Stosch führte Albani in die Gemmenkunde, die Glyptik, ein
+11	0	1	55,56,57	BENEFACTOR	verkehrte aus diplomatischen Gründen mit Archinto und speiste eine zeitlang einmal die Woche bei ihm. Wäre er nicht von Albani abgeworben, hätte er aus einer finanziellen Notlage heraus für ihn gearbeitet.
+12	0	1	58	BENEFACTOR	stirbt
+13	0	2	55,56	BENEFACTOR	Stipendium, um Winckelmanns Romstudien zu finanzieren
+14	0	2	57,58,59,60,61,62	BENEFACTOR	Trotz des siebenjährigen Krieges, schafften er und einige Hoffreunde, Geld für das Stipendium zusammenzukratzen
+15	0	2	63	BENEFACTOR	bot Winckelmann Arbeit in Dresden an, wollte aber Rom nicht verlassen
+16	0	3	55,56,57	BENEFACTOR	gewährte Winckelmann wertvollen Zugang zur Vatikanischen Bibliothek und originalen, griech. Manuskripten
+17	0	3	58	BENEFACTOR	Der Papst starb, war zusammen mit Archinto ein wichtiger Kontakt
+18	0	4	55,56,57,58,59,60	BENEFACTOR	Zusätzlich zur Vatikanischen Bibliothek, die Passionei leitete, hatte Winckelmann Zugang zu seiner großen Privatbilbiothek. Winckelmann distanzierte sich aber wegen Passioneis Hass auf Jesuiten von ihm und aß aus diplomatischen Gründen noch regelmäßig bei ihm zu Abend
+19	0	4	61	BENEFACTOR	Passionei stirbt
+20	0	5	58,59,60,61,62	BENEFACTOR	Winckelmann wurde Albanis Privatsekretär, Gesellschafter und Bibliothekar. Überblickte zudem den Bau und die künstlerische Ausgestaltung der prächtigen Villa Albani. Winckelmann lernte ihn als Freund schätzen und ließ sich für seine Arbeiten von seiner Statuensammlung inspirieren. Schreckte auch nicht vor Diebstahl zurück.
+21	0	5	63,64,65,67	BENEFACTOR	wurde von Papst Klemens Albani direkt unterstellt, nun Scriptor deutschsprachiger Werke in der Vatikanischen Bibliothek.
+22	0	6	58	RIVAL	Winckelmann machte sich zunächst über Papst Benedikts wenig gelehrten Nachfolger und seine Sittsamkeit lustig
+23	0	6	63,64	BENEFACTOR	Klemens ordnete an, dass Winckelmann Albani direkt unterstellt wurde, um dem Angebot aus Dresden entgegen zu wirken Zudem wurde er Fremdenführer für hochrangige Gäste des Vatikans.
+24	0	6	65,66,67	BENEFACTOR	Der Papst entband Winckelmann von seiner Anwesenheitspflicht in der Vatikanischen Bibliothek, da viele wichtige Gäste explizit nach Winckelmann als Fremdenführer verlangten
+25	0	7	57	BENEFACTOR	Beeindruckt von Winckelmanns Talent war es von Stosch's letzter Wille, dass Winckelmann seine einzigartige Gemmensammlung katalogisierte.
+26	0	8	57,58,59	BENEFACTOR	Der Neffe des Barons beaufsichtige die Arbeit am Katalog, er hatte jedoch schon einige Gemmen für seine Reiselust verkauft. Winckelmann wohnte in dieser Zeit auch in Florenz bei Wilhelm.
+27	0	9	58	BENEFACTOR	Als Fremdenführer der exzentrischen lady Orford hätte es Winckelmann fast nach Griechenland geschafft, seine Berufung durch Albani hinderte ihn jedoch daran.
+28	0	10	55,56	FRIEND	Sie wohnten sich in Roms Künstlerviertel gegenüber und Mengs führte ihn in die Künstlerszene Roms ein.
+29	0	10	57,58,59	FRIEND	Wie auch Winckelmann war Mengs zunächst von Geldern des Dresdner Hofs abhängig.
+30	0	10	60	COLLEAGUE	Wohnte nun auch in der entstehenden Villa Albani und arbeitete an einem prächtigen Fresko.
+31	0	10	61	FRIEND	Ging zum Hof Karl III. nach Madrid, von da an nur noch Briefkontakt zu seinem Freund
+32	0	10	63	COLLEAGUE	half mit intellektuellem Input bei den Ergänzungen, half diplomatisch bei der Ernennung Winckelmanns zum päpstlichen Antiquar
+33	0	11	62	FRIEND	Kannte ihn noch aus Dresden, vermittelte diplomatisch zwischen Mengs und Winckelmann (Betrachtungen über die Mahlerey)
+34	0	12	55,56,57	FRIEND	Winckelmann bewunderte Giacomelli, „wie ein großer Grieche“, vielseitig gebildet und gutaussehend. Half Winckelmann bei den Feinheiten der Griechischen Sprache.
+35	0	20	58	FRIEND	Winckelmann wohnte bei Piaggio während seines Neapelauftritts und er erläuterte die Intrigen am Neapolitanischen Hof. Er war außerdem Spezialist für die restaurierung alter Schriftrollen.
+36	0	25	62	FRIEND	Seine zweite Reise nach Neapel unternahm Winckelmann mit seinem Freund Graf von Brühl.
+37	0	17	58	LOVER	Neben weiteren Liebschaften pflegte er auch eine zu einem jungen Schüler seines Freundes Mengs.
+38	0	19	62	LOVER	Während von Bergs kurzem Romaufenthalt baute Winckelmann ein leidenschaftliches Verhältnis mit dem jungen Baron aus Riga auf. Er ist letztendlich die Inspiration für Winckelmanns Beschreibung des Apolls inklusive homoerotischer Untertöne.
+39	0	18	63	LOVER	Mengs' Frau kehrte wegen ihrer eintretenden Depressionen aus Madrid zurück und verbrachte „sechs verliebte Monate“ mit Winckelmann.
+40	0	23	63,64	COLLEAGUE	Casanova, Bruder des berühmten Abenteurers und Frauenhelds, war ein begnadeter Kupferstecher und produzierte Material für Winckelmanns Hauptwerk. Leider jubelte er ihm auch einige Fälschungen unter.

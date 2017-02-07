@@ -1,11 +1,27 @@
 id	name	cat	years
-0	Johann Joachim Winckelmann	MAIN	55,56,57,58
-1	Raphael Mengs	FRIEND	55,56,57,58
-2	Passionei	BENEFACTOR	58
-3	Klemens XIII	BENEFACTOR	58,59,60
-4	Albani	BENEFACTOR	55,57,58,59,60
-5	Margherita Mengs	LOVER	62,63
-6	Friedrich von Berg	LOVER	62,63
-7	Ballerina	LOVER	62,63
-8	Schüler von Mengs	LOVER	62,63
-9	Pater Paggio	FRIEND	65
+0	J. J. Winckelmann	MAIN	0
+1	Alberico Archinto	BENEFACTOR	55,56,57,58
+2	Ludevico Bianconi	BENEFACTOR	0
+3	Papst Benedikt XIV.	BENEFACTOR	55,56,57,58
+4	Domenico Passionei	BENEFACTOR	55,56,57,58,59,60,61
+5	Alessandro Albani	BENEFACTOR	58,59,60,61,62,63,64,65,66,67
+6	Papst Klemens XIII.	BENEFACTOR	58,59,60,61,62,63,64,65
+7	Phillip von Stosch	BENEFACTOR	57
+8	Wilhelm Muzel-Stosch	BENEFACTOR	58,59,60
+9	Lady Orford	BENEFACTOR	58
+10	Raphael Mengs	FRIEND	55,56,57,58,59,60,61,62,63
+11	Christian Hagedorn	FRIEND	57
+12	Michelangelo Giacomelli	FRIEND	55,56,57
+13	Alessandro Albani	FRIEND	58,59,60,61,62,63,64,65,66,67
+14	Wilhelm Muzel-Stosch	FRIEND	58,59,60
+15	Pater Antonio Piaggio	FRIEND	58
+16	Graf von Brühl	FRIEND	62
+17	Ein Schüler Mengs'	LOVER	58
+18	Margherite Mengs	LOVER	63
+19	Friedrich von Berg	LOVER	62
+20	Pater Antonio Piaggio	COLLEAGUE	58
+21	Raphael Mengs	COLLEAGUE	55,56,57,58,59,60,61
+22	Michelangelo Giacomelli	COLLEAGUE	55,56,57
+23	Giovanni Casanova	COLLEAGUE	63,64
+24	Kardinal Carlo Fabroni	RIVAL	0
+25	Graf von Brühl	FRIEND	62
