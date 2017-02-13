@@ -28,7 +28,7 @@ id	idA	idB	years	cat	content
 26	0	8	57,58,59	BENEFACTOR	Der Neffe des Barons beaufsichtige die Arbeit am Katalog, er hatte jedoch schon einige Gemmen für seine Reiselust verkauft. Winckelmann wohnte in dieser Zeit auch in Florenz bei Wilhelm.
 27	0	9	58	BENEFACTOR	Als Fremdenführer der exzentrischen lady Orford hätte es Winckelmann fast nach Griechenland geschafft, seine Berufung durch Albani hinderte ihn jedoch daran.
 28	0	10	55,56	FRIEND	Sie wohnten sich in Roms Künstlerviertel gegenüber und Mengs führte ihn in die Künstlerszene Roms ein.
-29	0	10	57,58,59	FRIEND	Wie auch Winckelmann war Mengs zunächst von Geldern des Dresdner Hofs abhängig.
+29	0	10	57	FRIEND	Wie auch Winckelmann war Mengs zunächst von Geldern des Dresdner Hofs abhängig.
 30	0	10	60	COLLEAGUE	Wohnte nun auch in der entstehenden Villa Albani und arbeitete an einem prächtigen Fresko.
 31	0	10	61	FRIEND	Ging zum Hof Karl III. nach Madrid, von da an nur noch Briefkontakt zu seinem Freund
 32	0	10	63	COLLEAGUE	half mit intellektuellem Input bei den Ergänzungen, half diplomatisch bei der Ernennung Winckelmanns zum päpstlichen Antiquar
@@ -38,5 +38,6 @@ id	idA	idB	years	cat	content
 36	0	25	62	FRIEND	Seine zweite Reise nach Neapel unternahm Winckelmann mit seinem Freund Graf von Brühl.
 37	0	17	58	LOVER	Neben weiteren Liebschaften pflegte er auch eine zu einem jungen Schüler seines Freundes Mengs.
 38	0	19	62	LOVER	Während von Bergs kurzem Romaufenthalt baute Winckelmann ein leidenschaftliches Verhältnis mit dem jungen Baron aus Riga auf. Er ist letztendlich die Inspiration für Winckelmanns Beschreibung des Apolls inklusive homoerotischer Untertöne.
-39	0	18	63	LOVER	Mengs' Frau kehrte wegen ihrer eintretenden Depressionen aus Madrid zurück und verbrachte „sechs verliebte Monate“ mit Winckelmann.
+39	0	18	63	LOVER	Mengs' Frau Margareta kehrte wegen ihrer eintretenden Depressionen aus Madrid zurück und verbrachte „sechs verliebte Monate“ mit Winckelmann.
 40	0	23	63,64	COLLEAGUE	Casanova, Bruder des berühmten Abenteurers und Frauenhelds, war ein begnadeter Kupferstecher und produzierte Material für Winckelmanns Hauptwerk. Leider jubelte er ihm auch einige Fälschungen unter.
+41	0	10	58,59	RIVAL	In dieser Zeit entstand das Fresko „Jupiter küsst Ganymed“. Es konnte seine Betrachter täuschen und sogar Winckelmann hielt es für ein antikes Original. Er sollte Mengs nie verzeihen.

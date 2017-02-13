@@ -10,18 +10,17 @@ id	name	cat	years
 8	Wilhelm Muzel-Stosch	BENEFACTOR	58,59,60
 9	Lady Orford	BENEFACTOR	58
 10	Raphael Mengs	FRIEND	55,56,57,58,59,60,61,62,63
-11	Christian Hagedorn	FRIEND	57
+11	Christian Hagedorn	FRIEND	62
 12	Michelangelo Giacomelli	FRIEND	55,56,57
 13	Alessandro Albani	FRIEND	58,59,60,61,62,63,64,65,66,67
 14	Wilhelm Muzel-Stosch	FRIEND	58,59,60
 15	Pater Antonio Piaggio	FRIEND	58
 16	Graf von Brühl	FRIEND	62
 17	Ein Schüler Mengs'	LOVER	58
-18	Margherite Mengs	LOVER	63
+18	Margareta Mengs	LOVER	63
 19	Friedrich von Berg	LOVER	62
 20	Pater Antonio Piaggio	COLLEAGUE	58
 21	Raphael Mengs	COLLEAGUE	55,56,57,58,59,60,61
 22	Michelangelo Giacomelli	COLLEAGUE	55,56,57
 23	Giovanni Casanova	COLLEAGUE	63,64
 24	Kardinal Carlo Fabroni	RIVAL	0
-25	Graf von Brühl	FRIEND	62
